@@ -3,7 +3,9 @@
 import { jsx } from "theme-ui";
 import dynamic from "next/dynamic";
 
-const BrowserComponent = dynamic(() => import("../src/components/browser"));
+const BrowserComponent = dynamic(() => import("../src/components/browser"), {
+  ssr: false,
+});
 
 const Home = ({ content }) => (
   <div sx={{ height: `calc(100vh - 60px)` }}>
